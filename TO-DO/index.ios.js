@@ -12,25 +12,42 @@ import {
   View
 } from 'react-native';
 
+class Greetings extends Component {
+  render() {
+    return (
+      <Text> Hello {this.props.name} !!</Text>
+    )
+  }
+}
+
 class Project extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
+        <Greetings name = "Morticus"></Greetings>
+        <Blink text = "Mort ! Mort !"/>
       </View>
     );
   }
 }
 
+class Blink extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {showText: true};
+    setInterval(()=>{
+      this.setState (previousState => {
+        return {showText :!previousState.showText};
+      });
+    }, 1000);
+  }
+  render() {
+    let display = this.state.showText ? this.props.text: '';
+    return(
+      <Text>{display}</Text>
+    );
+  }
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
