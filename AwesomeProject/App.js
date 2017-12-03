@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { AppRegistry, StyleSheet, Text, View } from 'react-native';
 import Counter from './src/Counter';
 
 export default class App extends React.Component {
@@ -23,3 +23,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
 })
+
+AppRegistry.registerComponent('App', () => App)
