@@ -6,7 +6,9 @@
     "start": "react-native start"
   },
   "dependencies": {
+    "js-beautify": "^1.7.4",
     "react": "^15.1.0",
-    "react-native": "^0.27.2"
+    "react-native": "^0.27.2",
+    "text": "^0.1.0"
   }
 }
