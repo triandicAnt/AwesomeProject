@@ -6,11 +6,14 @@
 
 import React, { Component } from 'react';
 import {
+  Alert,
   AppRegistry,
   StyleSheet,
   Text,
   Image,
   TextInput,
+  Button,
+  TouchableOpacity,
   View
 } from 'react-native';
 
@@ -32,6 +35,7 @@ class Project extends Component {
         <Blink text = "Mort ! Mort !"/>
         <Image style={styles.image_mort} source={{uri: morticus_url}}/>
         <PizzaTranslator/>
+        <ButtonBasic/>
       </View>
     );
   }
@@ -77,6 +81,38 @@ class Blink extends Component {
     );
   }
 }
+
+class ButtonBasic extends Component {
+  constructor(props) {
+    super(props)
+    this.state = { count: 0 }
+  }
+
+  onPress = () => {
+    this.setState({
+      count: this.state.count+1
+    })
+  }
+
+ render() {
+   return (
+     <View style={styles.container}>
+       <TouchableOpacity
+         style={styles.button}
+         onPress={this.onPress}
+       >
+         <Text> Touch Here </Text>
+       </TouchableOpacity>
+       <View style={[styles.countContainer]}>
+         <Text style={[styles.countText]}>
+            { this.state.count !== 0 ? this.state.count: null}
+          </Text>
+        </View>
+      </View>
+    )
+  }
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -109,6 +145,22 @@ const styles = StyleSheet.create({
   textInput : {
     height:40,
     borderColor : '#FFFFFF'
+  },
+  buttonContainer: {
+   flex: 1,
+   justifyContent: 'center',
+  },
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 10
+  },
+  countContainer: {
+    alignItems: 'center',
+    padding: 10
+  },
+  countText: {
+    color: '#FF00FF'
   }
 });
 
