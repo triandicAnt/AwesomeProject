@@ -17,6 +17,7 @@ import PizzaTranslator from './src/pizzaTranslator';
 import Blink from './src/blink';
 import ButtonBasic from './src/buttonBasic';
 import FlatListBasic from './src/flatList';
+import Movies from './src/movies';
 
 morticus_url = 'https://vignette.wikia.nocookie.net/penguinsofmadagascar/images/8/85/Morticus_Khan.jpg';
 
@@ -27,9 +28,7 @@ class Project extends Component {
         <Greetings name = "Morticus"></Greetings>
         <Blink text = "Mort ! Mort !"/>
         <Image style={styles.image_mort} source={{uri: morticus_url}}/>
-        <PizzaTranslator/>
-        <ButtonBasic/>
-        <FlatListBasic/>
+        <Movies/>
       </ScrollView>
     );
   }
@@ -45,5 +44,4 @@ const styles = StyleSheet.create({
     height : 200
   },
 });
-
 AppRegistry.registerComponent('Project', () => Project);

@@ -3,12 +3,17 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "react-native start"
+    "singlePath": "rc-autocomplete --src 'node_modules/react-toolbox/components/**/*.js'",
+    "generate": "rc-autocomplete"
   },
   "dependencies": {
     "js-beautify": "^1.7.4",
     "react": "^15.1.0",
     "react-native": "^0.27.2",
+    "react-toolbox": "^2.0.0-beta.12",
     "text": "^0.1.0"
+  },
+  "devDependencies": {
+    "react-autocomplete-cli": "0.0.3"
   }
 }
