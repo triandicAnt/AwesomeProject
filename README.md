@@ -1,5 +1,5 @@
 * AwesomeProject
-* TO-DO Application in React Native
+* TO-DO Application in React Native (giving ignite another try!)
 
 #### Notes
 * props : Component Parameters
